@@ -1,0 +1,7 @@
+Flask
+pandas
+datetime
+numpy
+qrcode
+Pillow
+openpyxl

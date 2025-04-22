@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Attendance | Sharda Attendance System</title>
+    <link rel="stylesheet" href="/static/css/attendancestyles.css">
+</head>
+<body>
+    <div class="attendance-container">
+        <!-- Class Info -->
+        <div class="class-info">
+            <h2>Data Structures (CS301)</h2>
+            <p>📅 Date: April 2, 2025 &nbsp; | &nbsp; 🕒 Time: 10:00 AM - 11:00 AM &nbsp; | &nbsp; ⏳ Duration: 60 min</p>
+        </div>
+
+        <!-- Sections -->
+        <div class="attendance-sections">
+
+            <!-- Manual Attendance -->
+            <div class="section">
+                <h3>Manual Attendance</h3>
+                <div style="font-size: 30px; margin-bottom: 10px;">📋</div>
+                <button onclick="goToManual()">Mark Manually</button>
+            </div>
+
+            <!-- Facial Attendance -->
+            <div class="section">
+                <h3>Facial Attendance</h3>
+                <div style="font-size: 30px; margin-bottom: 10px;">🧑‍💻</div>
+                <button onclick="registerFace()">Register Face</button>
+                <button onclick="startFacial()">Start Attendance</button>
+            </div>
+
+            <!-- View Records -->
+            <div class="section">
+                <h3>Attendance Records</h3>
+                <div style="font-size: 30px; margin-bottom: 10px;">📊</div>
+                <button onclick="viewRecords()">View Records</button>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <button class="back-button" onclick="goBack()">⬅ Back to Dashboard</button>
+    </div>
+
+    <script>
+        function goToManual() {
+            window.location.href = "/manual_attendance";
+        }
+
+        function registerFace() {
+            window.location.href = "/register_face";
+        }
+
+        function startFacial() {
+            window.location.href = "/mark_attendance";
+        }
+
+        function viewRecords() {
+            window.location.href = "/view_records";
+        }
+
+        function goBack() {
+            window.location.href = "/dashboard";
+        }
+    </script>
+</body>
+</html>

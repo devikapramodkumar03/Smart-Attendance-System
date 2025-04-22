@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Sharda Attendance System</title>
+    <link rel="stylesheet" href="/static/css/dashboardstyles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Top Profile Section -->
+        <div class="profile-section">
+            <div class="profile-pic-container">
+                <img src="/static/images/profpic.jpeg" alt="Professor Photo" class="profile-pic">
+            </div>
+            <div class="profile-details">
+                <h2>Prof. Jolie Adams</h2>
+                <p>Professor | Computer Science Department</p>
+                <p>Email: jolie.adams@sharda.ac.in</p>
+                <p>Contact: +91 9876543210</p>
+            </div>
+        </div>
+
+        <!-- Class Attendance Section -->
+        <div class="class-section">
+            <div class="section-header">
+                <h2>Classes</h2>
+                <button class="add-button">+ Add Class</button>
+            </div>
+            <div class="class-card">
+                <h3>Data Structures</h3>
+                <p>Course Code: CS301</p>
+                <button class="attendance-button" onclick="window.location.href='/attendance'">Take Attendance</button>
+            </div>
+        </div>
+
+        <!-- Go to Events Button -->
+        <div class = "events-button-container">
+        <button class="go-to-events-button" onclick="window.location.href='/edashboard'">Go to Events</button>
+        </div>
+    </div>
+</body>
+</html>
+
+

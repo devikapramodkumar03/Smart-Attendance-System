@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facial Recognition Registration</title>
+    <link rel="stylesheet" href="/static/css/faceregstyles.css">
+</head>
+<body>
+    <div class="registration-container">
+        <h2>Facial Recognition Registration</h2>
+
+        <!-- Name Input Field -->
+        <div class="input-group">
+            <label for="studentName">Enter Your Name:</label>
+            <input type="text" id="studentName" placeholder="Full Name">
+        </div>
+
+        <!-- Start Capture Button -->
+        <button class="capture-button" onclick="startCapture()">Start Registration</button>
+
+        <!-- Instructions Section -->
+        <div class="instructions">
+            <h3>How to Register:</h3>
+            <div class="steps-container">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <img src="/static/images/id-card.png" alt="Enter Name">
+                    <h4>Step 1</h4>
+                    <p>Enter your full name in the input field.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <img src="/static/images/lighting.png" alt="Well Lit Room">
+                    <h4>Step 2</h4>
+                    <p>Stay in a well-lit area for best results.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <img src="/static/images/facial-recognition.png" alt="Face Capture">
+                    <h4>Step 3</h4>
+                    <p>Look directly at the camera and remain still while your face is captured.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <button class="back-button" onclick="goBack()">Back to Dashboard</button>
+    </div>
+
+    <script>
+        function startCapture() {
+            const name = document.getElementById("studentName").value;
+            if (name.trim() === "") {
+                alert("⚠ Please enter your name before proceeding.");
+                return;
+            }
+            window.location.href = '/captureface';  
+
+        }
+
+        function goBack() {
+            window.location.href = "/dashboard";
+        }
+    </script>
+</body>
+</html>

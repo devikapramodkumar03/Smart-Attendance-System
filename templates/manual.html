@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Improved Manual Attendance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 900px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        .form-control:focus {
+            border-color: #5cb85c;
+            box-shadow: 0 0 0 0.2rem rgba(92, 184, 92, 0.25);
+        }
+        .btn-success {
+            background-color: #5cb85c;
+            border-color: #5cb85c;
+        }
+        .btn-success:hover {
+            background-color: #4cae4c;
+            border-color: #4cae4c;
+        }
+        .table thead th {
+            background-color: #f2f2f2;
+            border-bottom: 2px solid #dee2e6;
+            font-weight: 600;
+            color: #333;
+        }
+        .present-check input[type="checkbox"] {
+            accent-color: green;
+        }
+        .absent-check input[type="checkbox"] {
+            accent-color: red;
+        }
+        .delete-btn {
+            background: none;
+            border: none;
+            color: #dc3545;
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        .delete-btn:hover {
+            color: #c82333;
+        }
+        table th, table td {
+            vertical-align: middle !important;
+            padding: 1rem;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 class="mb-4 text-center">Manual Attendance</h3>
+
+        <!-- Flash message -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert alert-info">{{ messages[0] }}</div>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Add Student Form -->
+        <form method="POST" action="{{ url_for('manual_attendance') }}" class="mb-5">
+            <h5 class="mb-3">Add New Student</h5>
+            <div class="row g-3">
+                <div class="col-md-5">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                        <input type="text" name="student_id" class="form-control" placeholder="Student ID" required>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" name="add_student" class="btn btn-success w-100">Add</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Attendance Form -->
+        <form method="POST" action="{{ url_for('manual_attendance') }}">
+            <h5 class="mb-3">Mark Attendance</h5>
+            <div class="table-responsive">
+                <table class="table table-bordered bg-white text-center">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Present</th>
+                            <th>Absent</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for student in students %}
+                            <tr>
+                                <td>{{ student[1] }}</td>
+                                <td>{{ student[0] }}</td>
+                                <td class="present-check">
+                                    <input type="checkbox" name="present[]" value="{{ student[1] }}">
+                                </td>
+                                <td class="absent-check">
+                                    <input type="checkbox" name="absent[]" value="{{ student[1] }}">
+                                </td>
+                                <td>
+                                    <form method="POST" action="{{ url_for('delete_student') }}" style="display:inline;">
+                                        <input type="hidden" name="student_id" value="{{ student[1] }}">
+                                        <button type="submit" class="delete-btn" title="Delete student"><i class="fas fa-trash-alt"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-end">
+                <button type="submit" name="mark_attendance" class="btn btn-primary">Submit Attendance</button>
+            </div>
+        </form>
+
+        <div class="mt-4 text-center">
+            <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

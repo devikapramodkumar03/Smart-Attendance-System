@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Attendance</title>
+    <link rel="stylesheet" href="/static/css/faceattendancestyles.css">
+</head>
+<body>
+    <div class="attendance-container">
+        <h2>Facial Recognition Attendance</h2>
+
+        <!-- Instructions Section -->
+        <div class="instructions">
+            <h3>How It Works</h3>
+            <div class="steps-container">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <img src="/static/images/roll-call.png" alt="Start Attendance">
+                    <h4>Step 1</h4>
+                    <p>Click "Start Attendance" to open the camera.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <img src="/static/images/audience.png" alt="Stand in Front">
+                    <h4>Step 2</h4>
+                    <p>Stand still in front of the camera one by one.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <img src="/static/images/authentication.png" alt="Attendance Marked">
+                    <h4>Step 3</h4>
+                    <p>Once recognized, your attendance is marked.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Attendance Button -->
+        <button class="start-button" onclick="startAttendance()">Start Attendance</button>
+
+        <!-- Back to Dashboard Button -->
+        <button class="back-button" onclick="goBack()">Back to Dashboard</button>
+    </div>
+
+    <script>
+        function startAttendance() {
+            window.location.href = "/start_facial_recognition";
+        }
+
+        function goBack() {
+            window.location.href = "/dashboard";
+        }
+    </script>
+</body>
+</html>

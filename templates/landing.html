@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sharda University | Attendance System</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="bg-white shadow-md p-4 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+      <img src="/static/images/sharda-logo.png" alt="Sharda University" class="h-10 w-auto">
+      <span class="text-xl font-semibold">Attendance Portal</span>
+    </div>
+    
+  </header>
+
+  <!-- Hero Section -->
+<!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<!-- Hero Section with Image Slider as Background -->
+<section class="relative h-screen w-full overflow-hidden">
+  <!-- Swiper Background -->
+  <div class="absolute inset-0 z-0">
+    <div class="swiper heroSwiper h-full">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="/static/images/campus2.avif" class="w-full h-full object-cover opacity-70" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/static/images/pic.jpg" class="w-full h-full object-cover opacity-70" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/static/images/campus3.jpeg" class="w-full h-full object-cover opacity-70" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute inset-0 bg-black/50 z-10"></div>
+  
+  <!-- Hero Content -->
+  <div class="relative z-10 h-full flex flex-col justify-center items-center text-white text-center px-6 backdrop-brightness-75">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6 drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] text-black bg-black/50 px-6 py-4 rounded-2xl ">
+      Welcome to Sharda University's Attendance System
+    </h1>
+    <a href="/selection" class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded text-lg font-semibold shadow-lg">
+      Get Started
+    </a>
+  </div>
+  
+
+</section>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const heroSwiper = new Swiper(".heroSwiper", {
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+  });
+</script>
+
+
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+    
+    <!-- Feature Box 1 -->
+    <div class="bg-gray-50 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition">
+      <h3 class="text-xl font-semibold mb-3">Real-time Tracking</h3>
+      <p class="text-gray-600">Monitor and manage attendance records in real-time with complete transparency.</p>
+    </div>
+
+    <!-- Feature Box 2 -->
+    <div class="bg-gray-50 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition">
+      <h3 class="text-xl font-semibold mb-3">Secure Access</h3>
+      <p class="text-gray-600">Role-based secure login for students, faculty, and administrators.</p>
+    </div>
+
+    <!-- Feature Box 3 -->
+    <div class="bg-gray-50 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition">
+      <h3 class="text-xl font-semibold mb-3">Automated Reports</h3>
+      <p class="text-gray-600">Generate detailed attendance summaries for academic and administrative use.</p>
+    </div>
+
+  </div>
+</section>
+
+
+ <!-- Font Awesome CDN for icons -->
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+<!-- Footer Section -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+
+  <!-- College Info -->
+  <div>
+    <h4 class="text-lg font-semibold mb-4">Sharda University</h4>
+    <p class="text-gray-400 text-sm">Plot No. 32-34, Knowledge Park III,<br> Greater Noida, Uttar Pradesh – 201306</p>
+  </div>
+
+  <!-- Contact Info -->
+  <div>
+    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+    <p class="text-gray-400 text-sm mb-1"><i class="fas fa-phone mr-2"></i> +91 120 4570000</p>
+    <p class="text-gray-400 text-sm"><i class="fas fa-envelope mr-2"></i> info@sharda.ac.in</p>
+  </div>
+
+  <!-- Social Media -->
+  <div>
+    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+    <div class="flex gap-4 text-xl">
+      <a href="https://www.facebook.com/ShardaUniversity/" target="_blank" class="hover:text-blue-400 transition">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://twitter.com/shardauniv" target="_blank" class="hover:text-blue-300 transition">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.instagram.com/sharda_university/" target="_blank" class="hover:text-pink-400 transition">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/school/sharda-university/" target="_blank" class="hover:text-blue-600 transition">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Bottom Footer -->
+<div class="text-center text-gray-500 text-sm mt-10">
+  &copy; 2025 Sharda University | All rights reserved.
+</div>
+</footer>
+
+</body>
+</html>

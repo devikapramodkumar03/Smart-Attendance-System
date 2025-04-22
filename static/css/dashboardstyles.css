@@ -1,0 +1,161 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    position: relative; /* Ensure it acts as a base layer */
+}
+.events-button-container {
+    text-align: center; /* Center the button horizontally */
+    margin-top: 20px; /* Add some space above the button */
+}
+
+.go-to-events-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 12px 24px; /* Padding */
+    font-size: 1rem; /* Font size */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.go-to-events-button:hover {
+    background-color: #367C39; /* Darker green on hover */
+}
+
+/* Watermark background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/static/images/logo.png'); /* Replace with actual path */
+    background-repeat: repeat;
+    background-size: 300px auto; /* Adjust size to prevent congestion */
+    background-position: center;
+    opacity: 0.05; /* Light watermark effect */
+    z-index: -1; /* Moves behind all content */
+}
+
+/* Dashboard container */
+.dashboard-container {
+    width: 80%;
+    margin: 20px auto;
+    position: relative; /* Ensure it stays above the watermark */
+    z-index: 1;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Picture */
+.profile-pic-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Profile Details */
+.profile-details {
+    flex: 1;
+    text-align: right;
+}
+
+.profile-details h2 {
+    margin: 0;
+    color: #333;
+}
+
+.profile-details p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Class and Event Sections */
+.class-section, .event-section {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Headers (Classes & Events) */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header h2 {
+    margin: 0;
+    color: #007BFF;
+}
+
+/* Add Class & Add Event Buttons */
+.add-button {
+    background: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.add-button:hover {
+    background: #218838;
+}
+
+/* Class Cards */
+.class-card {
+    background: #eaf2ff; /* Light blue to pop out */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.class-card h3 {
+    margin: 0;
+    color: #333;
+}
+
+.class-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Attendance Button */
+.attendance-button {
+    background: #007BFF;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.attendance-button:hover {
+    background: #0056b3;
+}

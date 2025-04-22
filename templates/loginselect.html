@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Sharda University Attendance</title>
+    <link rel="stylesheet" href="/static/css/loginstyles.css">
+</head>
+<body>
+    <style>
+        .login-type-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.login-btn {
+    display: inline-block;
+    background-color: #007BFF;         /* Bright blue */
+    color: #fff;                       /* White text */
+    text-decoration: none;             /* Remove underline for <a> */
+    padding: 12px 36px;
+    font-size: 1.08rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    cursor: pointer;
+    transition: background 0.22s, box-shadow 0.22s, transform 0.1s;
+}
+
+.login-btn:hover,
+.login-btn:focus {
+    background-color: #0056b3;         /* Darker blue on hover */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.13);
+    transform: translateY(-2px) scale(1.03);
+}
+
+    </style>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <div class="login-type-buttons">
+                <a href="/login" class="login-btn student-btn">Student Login</a>
+                <a href="/login" class="login-btn faculty-btn">Faculty Login</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
