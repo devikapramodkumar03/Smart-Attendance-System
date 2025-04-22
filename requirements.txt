@@ -5,3 +5,5 @@ numpy
 qrcode
 Pillow
 openpyxl
+gunicorn
+
